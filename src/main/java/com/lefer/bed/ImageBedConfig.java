@@ -13,6 +13,7 @@ public class ImageBedConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/img/**").addResourceLocations("file:../img/");
+        registry.addResourceHandler("/mp3/**").addResourceLocations("file:../mp3/");
         super.addResourceHandlers(registry);
     }
 }
