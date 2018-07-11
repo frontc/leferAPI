@@ -43,6 +43,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -53,6 +54,26 @@
                 <configuration>
                     <executable>true</executable>
                 </configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>0.9.4</version>
+				<configuration>
+					<from>
+						<image>openjdk:alpine</image>
+					</from>
+					<to>
+						<image>registry.cn-hangzhou.aliyuncs.com/lefer/leferapi:1.1</image>
+					</to>
+					<container>
+					<jvmFlags>
+						<jvmFlag>-Xms512m</jvmFlag>
+						<jvmFlag>-Xdebug</jvmFlag>
+						<jvmFlag>-Xmy:flag=jib-rules</jvmFlag>
+					</jvmFlags>
+					</container>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
